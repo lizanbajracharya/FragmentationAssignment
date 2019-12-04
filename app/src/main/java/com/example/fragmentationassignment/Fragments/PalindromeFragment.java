@@ -23,6 +23,7 @@ public class PalindromeFragment extends Fragment implements View.OnClickListener
     //Declaration
     private EditText etNumber;
     private Button btnCheck;
+    private TextView tvPalindrome;
     public PalindromeFragment() {
         // Required empty public constructor
     }
@@ -36,6 +37,7 @@ public class PalindromeFragment extends Fragment implements View.OnClickListener
         //Binding
         etNumber=view.findViewById(R.id.etNumber);
         btnCheck=view.findViewById(R.id.btnCheck);
+        tvPalindrome=view.findViewById(R.id.tvPalindrome);
         btnCheck.setOnClickListener(this);
         return view;
     }
@@ -45,6 +47,7 @@ public class PalindromeFragment extends Fragment implements View.OnClickListener
         //Validation
         if(TextUtils.isEmpty(etNumber.getText())) {
             etNumber.setError("Enter the number");
+            etNumber.requestFocus();
         }
         else {
             //Calculation
@@ -59,8 +62,10 @@ public class PalindromeFragment extends Fragment implements View.OnClickListener
                 i = 0;
             }
             if (reverse == q) {
+                tvPalindrome.setText(q + " is a Palindrome Number");
                 Toast.makeText(getActivity(), q + "is a Palindrome Number", Toast.LENGTH_SHORT).show();
             } else {
+                tvPalindrome.setText(q + " is not a Palindrome Number");
                 Toast.makeText(getActivity(), q + "is not a Palindrome Number", Toast.LENGTH_SHORT).show();
             }
         }

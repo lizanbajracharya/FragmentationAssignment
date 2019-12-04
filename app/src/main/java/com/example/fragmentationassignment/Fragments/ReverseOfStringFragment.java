@@ -51,10 +51,11 @@ public class ReverseOfStringFragment extends Fragment implements View.OnClickLis
         //Validation and Calculation
         if (!etString.getText().toString().isEmpty()) {
             StringBuffer c = new StringBuffer(etString.getText().toString());
-            tvString.setText("The reverse of the string is" +c.reverse().toString());
+            tvString.setText("The reverse of the string is " + c.reverse().toString());
             Toast.makeText(getActivity(), "The reverse of the string is: "+c.reverse(), Toast.LENGTH_SHORT).show();
         } else {
             etString.setError("Enter the string");
+            etString.requestFocus();
         }
     }
 }

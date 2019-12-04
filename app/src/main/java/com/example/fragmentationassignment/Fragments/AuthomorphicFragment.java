@@ -23,6 +23,7 @@ public class AuthomorphicFragment extends Fragment implements View.OnClickListen
     //Declaration
     private EditText etNumber1;
     private Button btnCheck1;
+    private TextView tvAuto;
 
     public AuthomorphicFragment() {
         // Required empty public constructor
@@ -37,6 +38,7 @@ public class AuthomorphicFragment extends Fragment implements View.OnClickListen
         //Binding
         etNumber1=view.findViewById(R.id.etNumber1);
         btnCheck1=view.findViewById(R.id.btnCheck1);
+        tvAuto=view.findViewById(R.id.tvAuto);
         btnCheck1.setOnClickListener(this);
         return view;
     }
@@ -46,6 +48,7 @@ public class AuthomorphicFragment extends Fragment implements View.OnClickListen
         //Validation
         if(TextUtils.isEmpty(etNumber1.getText())) {
             etNumber1.setError("Enter the number");
+            etNumber1.requestFocus();
         }
         else {
             //Calculation
@@ -55,10 +58,14 @@ public class AuthomorphicFragment extends Fragment implements View.OnClickListen
             String str_num = Integer.toString(num);
             String square = Integer.toString(sq_num);
 
-            if (square.endsWith(str_num))
+            if (square.endsWith(str_num)) {
+                tvAuto.setText(num + " is a Automorphic Number");
                 Toast.makeText(getActivity(), num + " is an Automorphic Number", Toast.LENGTH_SHORT).show();
-            else
+            }
+            else{
+                tvAuto.setText(num + " is not a Automorphic Number");
                 Toast.makeText(getActivity(), num + " is not an Automorphic Number", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

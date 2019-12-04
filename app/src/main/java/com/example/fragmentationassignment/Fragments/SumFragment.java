@@ -49,16 +49,18 @@ public class SumFragment extends Fragment implements View.OnClickListener{
         //Validation
         if(TextUtils.isEmpty(etFirst.getText().toString())){
             etFirst.setError("Enter First number");
+            etFirst.requestFocus();
         }
         else if(TextUtils.isEmpty(etSecond.getText().toString())){
             etSecond.setError("Enter Second Number");
+            etSecond.requestFocus();
         }
         else {
             //Calculation
         int first=Integer.parseInt(etFirst.getText().toString());
         int second=Integer.parseInt(etSecond.getText().toString());
         int result=first+second;
-        tvSum.setText("Sum is" + result);
+        tvSum.setText("Sum is " + result);
         Toast.makeText(getActivity(), "Sum is :"+result, Toast.LENGTH_SHORT).show();
         }
     }

@@ -47,6 +47,7 @@ public class ReverseFragment extends Fragment implements View.OnClickListener {
         //Validation
         if(TextUtils.isEmpty(etFirstNo.getText())){
             etFirstNo.setError("Enter the number");
+            etFirstNo.requestFocus();
         }
         else {
             //Calculation
@@ -57,7 +58,7 @@ public class ReverseFragment extends Fragment implements View.OnClickListener {
                 reversed = reversed * 10 + digit;
                 num /= 10;
             }
-            tvReverse.setText("The reverse of the number is" + reversed);
+            tvReverse.setText("The reverse of the number is " + reversed);
             Toast.makeText(getActivity(), reversed + " is the reverse of the number ", Toast.LENGTH_SHORT).show();
         }
     }

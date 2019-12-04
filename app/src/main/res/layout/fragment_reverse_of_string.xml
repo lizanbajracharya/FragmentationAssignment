@@ -26,6 +26,7 @@
         android:id="@+id/btnString"
         android:text="Reverse"
         android:textSize="25dp"
+        android:background="@color/colorBlue"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

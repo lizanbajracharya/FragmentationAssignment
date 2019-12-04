@@ -48,6 +48,7 @@ public class AreaFragment extends Fragment implements View.OnClickListener{
         //Validation
         if(TextUtils.isEmpty(etRadius.getText())){
             etRadius.setError("Enter the radius");
+            etRadius.requestFocus();
         }
         else {
             //Calculation
