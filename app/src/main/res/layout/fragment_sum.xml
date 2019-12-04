@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/btnSum"
+        android:id="@+id/btnSum1"
         android:text="Calculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
