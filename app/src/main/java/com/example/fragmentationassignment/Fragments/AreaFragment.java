@@ -14,7 +14,7 @@ import com.example.fragmentationassignment.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AreaFragment extends Fragment {
+public class AreaFragment extends Fragment{
 
 
     public AreaFragment() {
