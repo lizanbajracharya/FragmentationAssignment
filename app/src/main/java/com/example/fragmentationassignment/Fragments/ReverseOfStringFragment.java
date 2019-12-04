@@ -21,10 +21,11 @@ import java.util.HashMap;
  * A simple {@link Fragment} subclass.
  */
 public class ReverseOfStringFragment extends Fragment implements View.OnClickListener{
-    EditText etString;
-    Button btnString;
-    TextView tvString;
-    HashMap<Character, Integer> charCountMap;
+    //Declaration
+    private EditText etString;
+    private Button btnString;
+    private TextView tvString;
+    private HashMap<Character, Integer> charCountMap;
 
     public ReverseOfStringFragment() {
         // Required empty public constructor
@@ -36,6 +37,7 @@ public class ReverseOfStringFragment extends Fragment implements View.OnClickLis
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_reverse_of_string, container, false);
+        //Binding
         etString=view.findViewById(R.id.etString);
         btnString=view.findViewById(R.id.btnString);
         tvString=view.findViewById(R.id.tvString);
@@ -46,6 +48,7 @@ public class ReverseOfStringFragment extends Fragment implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
+        //Validation and Calculation
         if (!etString.getText().toString().isEmpty()) {
             StringBuffer c = new StringBuffer(etString.getText().toString());
             tvString.setText("The reverse of the string is" +c.reverse().toString());

@@ -20,9 +20,10 @@ import com.example.fragmentationassignment.R;
  * A simple {@link Fragment} subclass.
  */
 public class AreaFragment extends Fragment implements View.OnClickListener{
-    EditText etRadius;
-    Button btnCalculate;
-    TextView tvArea;
+    //Declaration
+    private EditText etRadius;
+    private Button btnCalculate;
+    private TextView tvArea;
     public AreaFragment() {
         // Required empty public constructor
     }
@@ -33,6 +34,8 @@ public class AreaFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_area, container, false);
+
+        //Binding
         etRadius=view.findViewById(R.id.etRadius);
         btnCalculate=view.findViewById(R.id.btnCalculate);
         tvArea=view.findViewById(R.id.tvArea);
@@ -42,10 +45,12 @@ public class AreaFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+        //Validation
         if(TextUtils.isEmpty(etRadius.getText())){
             etRadius.setError("Enter the radius");
         }
         else {
+            //Calculation
             int radius = Integer.parseInt(etRadius.getText().toString());
             double result = 3.14 * radius * radius;
             tvArea.setText("Area of Circle is " + result);

@@ -20,9 +20,10 @@ import com.example.fragmentationassignment.R;
  * A simple {@link Fragment} subclass.
  */
 public class AuthomorphicFragment extends Fragment implements View.OnClickListener{
-    EditText etNumber1;
-    Button btnCheck1;
-    TextView tvAuto;
+    //Declaration
+    private EditText etNumber1;
+    private Button btnCheck1;
+    private TextView tvAuto;
 
     public AuthomorphicFragment() {
         // Required empty public constructor
@@ -34,6 +35,7 @@ public class AuthomorphicFragment extends Fragment implements View.OnClickListen
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_authomorphic, container, false);
+        //Binding
         etNumber1=view.findViewById(R.id.etNumber1);
         btnCheck1=view.findViewById(R.id.btnCheck1);
         tvAuto=view.findViewById(R.id.tvAuto);
@@ -43,10 +45,12 @@ public class AuthomorphicFragment extends Fragment implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
+        //Validation
         if(TextUtils.isEmpty(etNumber1.getText())) {
             etNumber1.setError("Enter the number");
         }
         else {
+            //Calculation
             int num = Integer.parseInt(etNumber1.getText().toString());
             int sq_num = num * num;
 

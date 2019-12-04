@@ -20,9 +20,10 @@ import com.example.fragmentationassignment.R;
  * A simple {@link Fragment} subclass.
  */
 public class SumFragment extends Fragment implements View.OnClickListener{
-    EditText etFirst,etSecond;
-    Button btnCalculate;
-    TextView tvSum;
+    //Declaration
+    private EditText etFirst,etSecond;
+    private Button btnCalculate;
+    private TextView tvSum;
 
     public SumFragment() {
         // Required empty public constructor
@@ -34,6 +35,7 @@ public class SumFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_sum, container, false);
+        //Binding
         etFirst=view.findViewById(R.id.etFirst);
         etSecond=view.findViewById(R.id.etSecond);
         btnCalculate=view.findViewById(R.id.btnSum1);
@@ -44,6 +46,7 @@ public class SumFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+        //Validation
         if(TextUtils.isEmpty(etFirst.getText().toString())){
             etFirst.setError("Enter First number");
         }
@@ -51,6 +54,7 @@ public class SumFragment extends Fragment implements View.OnClickListener{
             etSecond.setError("Enter Second Number");
         }
         else {
+            //Calculation
         int first=Integer.parseInt(etFirst.getText().toString());
         int second=Integer.parseInt(etSecond.getText().toString());
         int result=first+second;

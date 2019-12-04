@@ -20,8 +20,9 @@ import com.example.fragmentationassignment.R;
  * A simple {@link Fragment} subclass.
  */
 public class PalindromeFragment extends Fragment implements View.OnClickListener{
-    EditText etNumber;
-    Button btnCheck;
+    //Declaration
+    private EditText etNumber;
+    private Button btnCheck;
     public PalindromeFragment() {
         // Required empty public constructor
     }
@@ -32,6 +33,7 @@ public class PalindromeFragment extends Fragment implements View.OnClickListener
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_palindrome, container, false);
+        //Binding
         etNumber=view.findViewById(R.id.etNumber);
         btnCheck=view.findViewById(R.id.btnCheck);
         btnCheck.setOnClickListener(this);
@@ -40,10 +42,12 @@ public class PalindromeFragment extends Fragment implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
+        //Validation
         if(TextUtils.isEmpty(etNumber.getText())) {
             etNumber.setError("Enter the number");
         }
         else {
+            //Calculation
             int number;
             number = Integer.parseInt(etNumber.getText().toString());
             int q = number;
