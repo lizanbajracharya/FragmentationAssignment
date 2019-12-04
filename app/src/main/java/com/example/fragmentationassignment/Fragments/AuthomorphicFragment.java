@@ -23,7 +23,6 @@ public class AuthomorphicFragment extends Fragment implements View.OnClickListen
     //Declaration
     private EditText etNumber1;
     private Button btnCheck1;
-    private TextView tvAuto;
 
     public AuthomorphicFragment() {
         // Required empty public constructor
@@ -38,7 +37,6 @@ public class AuthomorphicFragment extends Fragment implements View.OnClickListen
         //Binding
         etNumber1=view.findViewById(R.id.etNumber1);
         btnCheck1=view.findViewById(R.id.btnCheck1);
-        tvAuto=view.findViewById(R.id.tvAuto);
         btnCheck1.setOnClickListener(this);
         return view;
     }
