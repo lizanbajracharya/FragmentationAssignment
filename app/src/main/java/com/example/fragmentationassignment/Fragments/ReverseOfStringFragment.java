@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fragmentationassignment.R;
@@ -22,6 +23,7 @@ import java.util.HashMap;
 public class ReverseOfStringFragment extends Fragment implements View.OnClickListener{
     EditText etString;
     Button btnString;
+    TextView tvString;
     HashMap<Character, Integer> charCountMap;
 
     public ReverseOfStringFragment() {
@@ -36,6 +38,7 @@ public class ReverseOfStringFragment extends Fragment implements View.OnClickLis
         View view= inflater.inflate(R.layout.fragment_reverse_of_string, container, false);
         etString=view.findViewById(R.id.etString);
         btnString=view.findViewById(R.id.btnString);
+        tvString=view.findViewById(R.id.tvString);
         btnString.setOnClickListener(this);
         charCountMap = new HashMap<>();
         return view;
@@ -45,9 +48,10 @@ public class ReverseOfStringFragment extends Fragment implements View.OnClickLis
     public void onClick(View v) {
         if (!etString.getText().toString().isEmpty()) {
             StringBuffer c = new StringBuffer(etString.getText().toString());
+            tvString.setText("The reverse of the string is" +c.reverse().toString());
             Toast.makeText(getActivity(), "The reverse of the string is: "+c.reverse(), Toast.LENGTH_SHORT).show();
         } else {
-            etString.setError("Enter NAME");
+            etString.setError("Enter the string");
         }
     }
 }

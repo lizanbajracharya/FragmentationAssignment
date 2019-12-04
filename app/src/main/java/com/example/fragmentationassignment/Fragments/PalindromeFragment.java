@@ -5,11 +5,13 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fragmentationassignment.R;
@@ -38,20 +40,25 @@ public class PalindromeFragment extends Fragment implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        int number;
-        number=Integer.parseInt(etNumber.getText().toString());
-        int q = number;
-        int i, reverse = 0;
-        for (i = 0; i <= number; i++) {
-            reverse = reverse * 10;
-            reverse = reverse + number % 10;
-            number = number / 10;
-            i = 0;
+        if(TextUtils.isEmpty(etNumber.getText())) {
+            etNumber.setError("Enter the number");
         }
-        if (reverse == q) {
-            Toast.makeText(getActivity(), q+"is a Palindrome Number", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(getActivity(), q+"is not a Palindrome Number", Toast.LENGTH_SHORT).show();
+        else {
+            int number;
+            number = Integer.parseInt(etNumber.getText().toString());
+            int q = number;
+            int i, reverse = 0;
+            for (i = 0; i <= number; i++) {
+                reverse = reverse * 10;
+                reverse = reverse + number % 10;
+                number = number / 10;
+                i = 0;
+            }
+            if (reverse == q) {
+                Toast.makeText(getActivity(), q + "is a Palindrome Number", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getActivity(), q + "is not a Palindrome Number", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

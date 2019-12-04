@@ -2,19 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="400dp"
+    android:background="@color/colorAccent"
     android:orientation="vertical"
     tools:context=".Fragments.ReverseOfStringFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:text="Reverse of String"
+        android:textSize="35dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/etString"
-        android:hint="Enter the number"
+        android:hint="Enter the String"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/btnString"
         android:text="Reverse"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tvString"
+        android:textSize="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>

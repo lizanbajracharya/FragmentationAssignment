@@ -2,26 +2,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="400dp"
     android:orientation="vertical"
+    android:background="@color/colorBlue"
     tools:context=".Fragments.SumFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:textSize="35dp"
+        android:text="Sum of Number"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/etFirst"
         android:hint="Enter First Number"
+        android:textSize="25dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
+        android:inputType="numberDecimal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/etSecond"
         android:hint="Enter Second Number"
         android:gravity="center"
+        android:textSize="25dp"
+        android:inputType="numberDecimal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/btnSum1"
         android:text="Calculate"
+        android:textSize="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tvSum"
+        android:textSize="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

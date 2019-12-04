@@ -2,15 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="400dp"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
     tools:context=".Fragments.PalindromeFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:text="Palindrome of Number"
+        android:textSize="35dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/etNumber"
         android:textSize="25dp"
         android:hint="Enter Number"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
         android:inputType="numberDecimal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -19,7 +28,9 @@
         android:id="@+id/btnCheck"
         android:text="Check"
         android:textSize="25dp"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
 
 </LinearLayout>
